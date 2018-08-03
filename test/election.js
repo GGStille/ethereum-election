@@ -14,6 +14,7 @@ contract("Election", function(accounts) {
     it("it initializes the candidates with the correct values", function() {
         return Election.deployed().then(function(instance) {
             electionInstance = instance;
+            return electionInstance.candidates(1);
         }).then(function(candidate) {
             assert.equal(candidate[0], 1, "contains the correct id");
             assert.equal(candidate[1], "Candidate 1", "contains the correct name");
