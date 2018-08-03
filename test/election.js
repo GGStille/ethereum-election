@@ -19,7 +19,7 @@ contract("Election", function(accounts) {
             assert.equal(candidate[1], "Candidate 1", "contains the correct name");
             assert.equal(candidate[2], 0, "contains the correct votes count");
             return electionInstance.candidates(2);
-        }).the(function(candidate) {
+        }).then(function(candidate) {
             assert.equal(candidate[0], 2, "contains the correct id");
             assert.equal(candidate[1], "Candidate 2", "contains the correct name");
             assert.equal(candidate[2], 0, "contains the correct votes count");
